@@ -1,0 +1,48 @@
+.productID {
+  font-size: 1.3rem;
+  font-weight: bold;
+  /* user-select: none; */
+  /* margin: 0.4rem; */
+  height: 50px;
+  width: 50px;
+
+  cursor: grab;
+  font-style: normal;
+  filter: drop-shadow(0px 3px 4px #696767);
+  background-color: #85c92c;
+  color: rgb(255, 255, 255);
+}
+
+.tooltip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h3 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    position: relative;
+  }
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  background-color: rgb(76, 197, 86);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -100px;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+}
