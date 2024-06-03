@@ -1,8 +1,6 @@
 .productID {
   font-size: 1.3rem;
   font-weight: bold;
-  /* user-select: none; */
-  /* margin: 0.4rem; */
   height: 50px;
   width: 50px;
 
@@ -36,6 +34,7 @@
   font-size: 1rem;
 
   position: absolute;
+  min-width: 150px;
   z-index: 1;
   bottom: 100%;
   left: 50%;

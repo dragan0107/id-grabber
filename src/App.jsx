@@ -4,6 +4,7 @@ import ProductID from "./components/productID/ProductID";
 import { Reorder } from "framer-motion";
 import "./App.css";
 import Picker from "./components/picker/Picker";
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
   const [list, setList] = useState([]);
@@ -43,6 +44,7 @@ const App = () => {
         ))}
       </Reorder.Group>
       <Search productList={list} setIdList={setIdList} grabIds={grabIds} env={env} />
+      <ToastContainer position="top-center" theme="colored" />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import SearchItem from "../searchItem/SearchItem";
 import { useState, useRef, useEffect } from "react";
 import "./Search.css";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Button from "@mui/material/Button";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
@@ -64,7 +64,6 @@ function Search({ productList, setIdList, grabIds, env }) {
           Grab IDs
         </Button>
       </div>
-      <ToastContainer position="top-center" theme="colored" />
       <List
         sx={{
           width: "100%",

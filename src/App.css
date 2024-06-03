@@ -21,7 +21,6 @@ ul {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
   padding: 0 3rem;
 }
 
@@ -34,13 +33,10 @@ ul {
 .id-list {
   overflow-x: auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 92%;
+  max-width: 90%;
   gap: 0.5rem;
-  padding: 2rem;
-  /* min-height: 400px; */
-  white-space: nowrap;
+  padding: 4rem 5rem;
+  padding-top: 6rem;
 }
 
 .app-header {
