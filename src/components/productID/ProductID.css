@@ -9,7 +9,7 @@
   cursor: grab;
   font-style: normal;
   filter: drop-shadow(0px 3px 4px #696767);
-  background-color: #85c92c;
+  background-color: #2cc9b4;
   color: rgb(255, 255, 255);
 }
 
@@ -18,7 +18,6 @@
   justify-content: center;
   align-items: center;
   h3 {
-    font-family: "Roboto", sans-serif;
     font-weight: 600;
     position: relative;
   }
@@ -26,7 +25,7 @@
 
 .tooltip .tooltip-text {
   visibility: hidden;
-  background-color: rgb(76, 197, 86);
+  background-color: #4cc1c5;
   color: #fff;
   text-align: center;
   border-radius: 6px;

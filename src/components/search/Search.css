@@ -5,3 +5,8 @@ input {
 .clear-button {
   display: block;
 }
+.search-grab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

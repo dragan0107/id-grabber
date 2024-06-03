@@ -3,10 +3,12 @@ import Search from "./components/search/Search";
 import ProductID from "./components/productID/ProductID";
 import { Reorder } from "framer-motion";
 import "./App.css";
+import Picker from "./components/picker/Picker";
 
 const App = () => {
   const [list, setList] = useState([]);
   const [idList, setIdList] = useState([]);
+  const [env, setEnv] = useState("qa");
   const removeItem = (item) => {
     setIdList((prevList) => prevList.filter((listItem) => listItem !== item));
   };
@@ -14,14 +16,14 @@ const App = () => {
   useEffect(() => {
     (async () => {
       try {
-        const res = await fetch("/ctl-test.json");
+        const res = await fetch(`/products-${env}.json`);
         const data = await res.json();
         setList(data);
       } catch (error) {
         console.log(error);
       }
     })();
-  }, []);
+  }, [env]);
 
   const grabIds = () => {
     return idList.map((item) => item["productId"]).join(", ");
@@ -29,7 +31,10 @@ const App = () => {
 
   return (
     <div className="app">
-      <h1 className="app-title">ID Grabber</h1>
+      <div className="app-header">
+        <h1 className="app-title">AUVERE ID Grabber</h1>
+        <Picker env={env} setEnv={setEnv} setIdList={setIdList} />
+      </div>
       <Reorder.Group values={idList} onReorder={setIdList} axis="x" className="id-list">
         {idList.map((item, index) => (
           <Reorder.Item key={item["productId"]} value={item}>
@@ -37,7 +42,7 @@ const App = () => {
           </Reorder.Item>
         ))}
       </Reorder.Group>
-      <Search productList={list} setIdList={setIdList} grabIds={grabIds} />
+      <Search productList={list} setIdList={setIdList} grabIds={grabIds} env={env} />
     </div>
   );
 };

@@ -1,6 +1,5 @@
-import React from "react";
 import SearchItem from "../searchItem/SearchItem";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./Search.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -10,14 +9,20 @@ import ClearIcon from "@mui/icons-material/Clear";
 import TextField from "@mui/material/TextField";
 import { List } from "@mui/material";
 
-function Search({ productList, setIdList, grabIds }) {
+function Search({ productList, setIdList, grabIds, env }) {
   const [filtered, setFiltered] = useState([]);
+  const inputRef = useRef();
 
+  useEffect(() => {
+    setFiltered([]);
+    inputRef.current.value = "";
+  }, [env]);
   const handleChange = (e) => {
     const query = e.target.value;
 
     if (!query) {
       setFiltered([]);
+
       return;
     }
 
@@ -28,9 +33,9 @@ function Search({ productList, setIdList, grabIds }) {
   };
   const btnStyles = {
     margin: "0 .5rem",
-    backgroundColor: "#85c92c",
+    backgroundColor: "#4cc1c5",
     "&:hover": {
-      backgroundColor: "#5a8522",
+      backgroundColor: "#1fa190",
     },
   };
 
@@ -50,15 +55,26 @@ function Search({ productList, setIdList, grabIds }) {
 
   return (
     <div>
-      <TextField label="Search for products" variant="standard" onChange={handleChange} />
-      <Button className="buttons" variant="contained" onClick={() => setIdList([])} sx={btnStyles} endIcon={<ClearIcon />}>
-        Clear List
-      </Button>
-      <Button className="buttons" variant="contained" onClick={idGrabHandler} sx={btnStyles} endIcon={<ContentCopyIcon />}>
-        Grab IDs
-      </Button>
+      <div className="search-grab">
+        <TextField inputRef={inputRef} label="Search for products" variant="standard" onChange={handleChange} />
+        <Button className="buttons" variant="contained" onClick={() => setIdList([])} sx={btnStyles} endIcon={<ClearIcon />}>
+          Clear List
+        </Button>
+        <Button className="buttons" variant="contained" onClick={idGrabHandler} sx={btnStyles} endIcon={<ContentCopyIcon />}>
+          Grab IDs
+        </Button>
+      </div>
       <ToastContainer position="top-center" theme="colored" />
-      <List sx={{ width: "100%", maxWidth: 360, bgcolor: "#f5f5f5", display: "flex", flexDirection: "column" }}>
+      <List
+        sx={{
+          width: "100%",
+          maxWidth: 360,
+          bgcolor: "#f5f5f5",
+          display: "flex",
+          flexDirection: "column",
+          display: inputRef.current?.value ? "block" : "none",
+        }}
+      >
         {filtered.length > 0 ? (
           filtered.map((item) => {
             return <SearchItem item={item} key={item["productName"]} setIdList={setIdList} />;
