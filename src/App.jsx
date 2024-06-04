@@ -17,7 +17,7 @@ const App = () => {
   useEffect(() => {
     (async () => {
       try {
-        const res = await fetch(`/products-${env}.json`);
+        const res = await fetch(`/id-grabber/products-${env}.json`);
         const data = await res.json();
         setList(data);
       } catch (error) {
@@ -33,11 +33,11 @@ const App = () => {
   return (
     <div className="app">
       <div className="app-header">
-        <h1 className="app-title">AUVERE ID Grabber</h1>
+        <h1 className="app-title">AU ID Grabber</h1>
         <Picker env={env} setEnv={setEnv} setIdList={setIdList} />
       </div>
       <Reorder.Group values={idList} onReorder={setIdList} axis="x" className="id-list">
-        {idList.map((item, index) => (
+        {idList.map((item) => (
           <Reorder.Item key={item["productId"]} value={item}>
             <ProductID item={item} removeItem={removeItem} />
           </Reorder.Item>

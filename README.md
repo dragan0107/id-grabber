@@ -1,3 +1,4 @@
-# Auvere product ID grabber.
+# Product ID grabber.
 
-This app is intented to quickly pick product IDs up from QA and Production environments.
+This mini app can be used to quickly pick up product IDs from QA and Production environments.
+ID list can be reordered by drag and drop, and IDs can be removed on double click.
