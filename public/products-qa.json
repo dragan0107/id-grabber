@@ -1434,5 +1434,9 @@
   {
     "productId": 511,
     "productName": "Hexagon Diamond Necklace"
+  },
+  {
+    "productId": 512,
+    "productName": "Hexagon Diamond Bracelet"
   }
 ]
