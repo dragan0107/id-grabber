@@ -33,11 +33,19 @@ function Search({ productList, setIdList, grabIds, env }) {
   };
   const btnStyles = {
     margin: "0 .5rem",
-    backgroundColor: "#4cc1c5",
+    backgroundColor: "#18db18",
     "&:hover": {
-      backgroundColor: "#1fa190",
+      backgroundColor: "#106b10",
     },
   };
+  const clearBtnStyles = {
+    margin: "0 .5rem",
+    backgroundColor: "#ef0b0b",
+    "&:hover": {
+      backgroundColor: "#8b0000",
+    },
+  };
+
 
   const idGrabHandler = () => {
     const ids = grabIds();
@@ -57,7 +65,7 @@ function Search({ productList, setIdList, grabIds, env }) {
     <div>
       <div className="search-grab">
         <TextField inputRef={inputRef} label="Search for products" variant="standard" onChange={handleChange} />
-        <Button className="buttons" variant="contained" onClick={() => setIdList([])} sx={btnStyles} endIcon={<ClearIcon />}>
+        <Button className="buttons" variant="contained" onClick={() => setIdList([])} sx={clearBtnStyles} endIcon={<ClearIcon />}>
           Clear List
         </Button>
         <Button className="buttons" variant="contained" onClick={idGrabHandler} sx={btnStyles} endIcon={<ContentCopyIcon />}>
