@@ -38,6 +38,7 @@ function Search({ productList, setIdList, grabIds, env }) {
       backgroundColor: "#106b10",
     },
   };
+
   const clearBtnStyles = {
     margin: "0 .5rem",
     backgroundColor: "#ef0b0b",
@@ -51,11 +52,11 @@ function Search({ productList, setIdList, grabIds, env }) {
     const ids = grabIds();
     if (ids) {
       navigator.clipboard.writeText(grabIds());
-      toast.success("ID List successfully copied!", {
+      toast.success("ID List successfully grabbed!", {
         autoClose: 1500,
       });
     } else {
-      toast.error("Add products to list first!", {
+      toast.error("Add products to the list first!", {
         autoClose: 1500,
       });
     }
