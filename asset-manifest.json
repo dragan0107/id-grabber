@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/id-grabber/static/css/main.22a31f65.css",
-    "main.js": "/id-grabber/static/js/main.8e6cd4c5.js",
+    "main.js": "/id-grabber/static/js/main.0d08678e.js",
     "static/media/Astoria-Roman.otf": "/id-grabber/static/media/Astoria-Roman.47a68e31ce16bf4cb42e.otf",
     "index.html": "/id-grabber/index.html",
     "main.22a31f65.css.map": "/id-grabber/static/css/main.22a31f65.css.map",
-    "main.8e6cd4c5.js.map": "/id-grabber/static/js/main.8e6cd4c5.js.map"
+    "main.0d08678e.js.map": "/id-grabber/static/js/main.0d08678e.js.map"
   },
   "entrypoints": [
     "static/css/main.22a31f65.css",
-    "static/js/main.8e6cd4c5.js"
+    "static/js/main.0d08678e.js"
   ]
 }
